@@ -144,6 +144,9 @@ copy_local_files()
 
 COMMON_LIBS="
 	libcnefeatureconfig.so
+	libmmcamera_interface.so
+	libmmjpeg_interface.so
+	libqomx_core.so
 	"
 
 copy_files "$COMMON_LIBS" "system/lib" ""
@@ -175,25 +178,23 @@ COMMON_HW="
 	"
 copy_files "$COMMON_HW" "system/lib/hw" "hw"
 
-COMMON_WIFI="
-	wlan.ko
-	"
-copy_files "$COMMON_WIFI" "system/lib/modules" "wifi"
-
 COMMON_WIFI_VOLANS="
-	ath6kl_sdio.ko
+	pronto_wlan.ko
 	"
-copy_files "$COMMON_WIFI_VOLANS" "system/lib/modules/ath6kl-3.5" "wifi"
+copy_files "$COMMON_WIFI_VOLANS" "system/lib/modules/pronto" "wifi"
 
 COMMON_WLAN="
 	WCNSS_cfg.dat
-	WCNSS_qcom_cfg.ini
-	WCNSS_qcom_wlan_nv.bin
 	"
 copy_files "$COMMON_WLAN" "system/etc/firmware/wlan/prima" "wifi"
 
 COMMON_ETC="gps.conf"
 copy_files "$COMMON_ETC" "system/etc" "etc"
+
+COMMON_ETC_WIFI="
+	WCNSS_qcom_cfg.ini
+	"
+copy_files "$COMMON_ETC_WIFI" "system/etc/wifi" "wifi"
 
 COMMON_AUDIO="
 	"
