@@ -143,6 +143,7 @@ copy_local_files()
 }
 
 COMMON_LIBS="
+	libalsa-intf.so
 	libcnefeatureconfig.so
 	libmmcamera_interface.so
 	libmmjpeg_interface.so
@@ -154,6 +155,7 @@ copy_files "$COMMON_LIBS" "system/lib" ""
 copy_files_glob "lib*.so" "system/vendor/lib" ""
 
 COMMON_BINS="
+	adsprpcd
 	bridgemgrd
 	fm_qsoc_patches
 	fmconfig
@@ -174,6 +176,7 @@ COMMON_HW="
 	audio.primary.msm8610.so
 	camera.msm8610.so
 	gps.default.so
+	lights.msm8610.so
 	sensors.msm8610.so
 	"
 copy_files "$COMMON_HW" "system/lib/hw" "hw"
@@ -195,6 +198,11 @@ COMMON_ETC_WIFI="
 	WCNSS_qcom_cfg.ini
 	"
 copy_files "$COMMON_ETC_WIFI" "system/etc/wifi" "wifi"
+
+COMMON_ETC_AUDIO="
+	snd_soc_msm_8x10_wcd_skuaa
+	"
+copy_files "$COMMON_ETC_AUDIO" "system/etc/snd_soc_msm" "audio"
 
 COMMON_AUDIO="
 	"
