@@ -8,8 +8,12 @@ $(call inherit-product-if-exists, vendor/t2m/flame/flame-vendor-blobs.mk)
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.moz.devinputjack=1 \
+  ro.moz.nfc.enabled=true \
   ro.moz.ril.emergency_by_default=true \
   org.bluez.device.conn.type=array \
+
+PRODUCT_PACKAGES += \
+  nfcd
 
 PRODUCT_NAME := flame
 PRODUCT_DEVICE := flame

@@ -43,7 +43,7 @@ PROPRIETARY_DEVICE_DIR=../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 
 mkdir -p $PROPRIETARY_DEVICE_DIR
 
-for NAME in audio hw wifi etc egl etc/firmware
+for NAME in audio hw wifi etc egl etc/firmware nfc
 do
     mkdir -p $PROPRIETARY_DEVICE_DIR/$NAME
 done
@@ -147,6 +147,7 @@ COMMON_LIBS="
 	libcnefeatureconfig.so
 	libmmcamera_interface.so
 	libmmjpeg_interface.so
+	libnfc-nci.so
 	libqomx_core.so
 	"
 
@@ -177,6 +178,7 @@ COMMON_HW="
 	camera.msm8610.so
 	gps.default.so
 	lights.msm8610.so
+	nfc_nci_pn547.msm8610.so
 	sensors.msm8610.so
 	"
 copy_files "$COMMON_HW" "system/lib/hw" "hw"
@@ -191,7 +193,11 @@ COMMON_WLAN="
 	"
 copy_files "$COMMON_WLAN" "system/etc/firmware/wlan/prima" "wifi"
 
-COMMON_ETC="gps.conf"
+COMMON_ETC="
+	libnfc-brcm.conf
+	libnfc-nxp.conf
+	gps.conf
+	"
 copy_files "$COMMON_ETC" "system/etc" "etc"
 
 COMMON_ETC_WIFI="
@@ -213,6 +219,11 @@ COMMON_EGL="
 	libGLES_android.so
 	"
 copy_files "$COMMON_EGL" "system/lib/egl" "egl"
+
+COMMON_VENDOR_NFC="
+	libpn547_fw.so
+	"
+copy_files "$COMMON_VENDOR_NFC" "system/vendor/firmware" "nfc"
 
 COMMON_VENDOR_EGL="
 	eglsubAndroid.so
