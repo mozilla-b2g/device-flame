@@ -15,6 +15,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
   nfcd
 
+# for Gecko to support bluedroid stack
+PRODUCT_PACKAGES += \
+    bluetooth.default
+
 PRODUCT_NAME := flame
 PRODUCT_DEVICE := flame
 PRODUCT_BRAND := qcom
