@@ -13,6 +13,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.moz.nfc.enabled=true \
   ro.moz.ril.emergency_by_default=true \
   org.bluez.device.conn.type=array \
+  ro.display.colorfill=1 \
 
 PRODUCT_PACKAGES += \
   nfcd
