@@ -15,7 +15,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
   org.bluez.device.conn.type=array \
 
 PRODUCT_PACKAGES += \
-  nfcd
+  nfcd \
+  librecovery
 
 PRODUCT_NAME := flame
 PRODUCT_DEVICE := flame
