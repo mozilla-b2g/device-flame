@@ -14,6 +14,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.moz.ril.emergency_by_default=true \
   org.bluez.device.conn.type=array \
 
+MOZ_GONK_VERSION := 2.0
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+  ro.moz.gonk_version=$(MOZ_GONK_VERSION)
+
 PRODUCT_PACKAGES += \
   nfcd
 
