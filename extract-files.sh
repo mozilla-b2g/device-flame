@@ -194,8 +194,6 @@ COMMON_WLAN="
 copy_files "$COMMON_WLAN" "system/etc/firmware/wlan/prima" "wifi"
 
 COMMON_ETC="
-	libnfc-brcm.conf
-	libnfc-nxp.conf
 	gps.conf
 	"
 copy_files "$COMMON_ETC" "system/etc" "etc"
