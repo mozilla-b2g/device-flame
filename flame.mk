@@ -3,7 +3,9 @@ $(call inherit-product, device/qcom/msm8610/msm8610.mk)
 PRODUCT_COPY_FILES := \
     device/qcom/msm8610/audio_policy.conf:system/etc/audio_policy.conf \
     device/qcom/msm8610/media/media_codecs_8610.xml:system/etc/media_codecs.xml \
-    device/qcom/msm8610/media/media_profiles_8610.xml:system/etc/media_profiles.xml
+    device/qcom/msm8610/media/media_profiles_8610.xml:system/etc/media_profiles.xml \
+    device/t2m/flame/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
+    device/t2m/flame/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic.mk)
 $(call inherit-product-if-exists, vendor/t2m/flame/flame-vendor-blobs.mk)
