@@ -149,6 +149,12 @@ COMMON_LIBS="
 	libmmjpeg_interface.so
 	libnfc-nci.so
 	libqomx_core.so
+	libloc_eng.so
+	libloc_api_v02.so
+	libloc_core.so
+	libloc_ds_api.so
+	libloc_xtra.so
+	libgps.utils.so
 	"
 
 copy_files "$COMMON_LIBS" "system/lib" ""
