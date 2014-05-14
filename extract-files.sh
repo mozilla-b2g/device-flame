@@ -145,6 +145,12 @@ copy_local_files()
 COMMON_LIBS="
 	libalsa-intf.so
 	libcnefeatureconfig.so
+	libgps.utils.so
+	libloc_api_v02.so
+	libloc_core.so
+	libloc_ds_api.so
+	libloc_eng.so
+	libloc_xtra.so
 	libmmcamera_interface.so
 	libmmjpeg_interface.so
 	libnfc-nci.so
