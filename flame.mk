@@ -20,6 +20,8 @@ PRODUCT_PACKAGES += \
   nfcd \
   librecovery
 
+GAIA_DEV_PIXELS_PER_PX := 1.5
+
 PRODUCT_NAME := flame
 PRODUCT_DEVICE := flame
 PRODUCT_BRAND := qcom
