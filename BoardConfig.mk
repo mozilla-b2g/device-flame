@@ -13,6 +13,8 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 75497472
 ENABLE_LIBRECOVERY := true
 RECOVERY_EXTERNAL_STORAGE := /storage/sdcard1
 
+TARGET_PROVIDES_INIT_RC := false
+
 # hack to prevent llvm from building
 BOARD_USE_QCOM_LLVM_CLANG_RS := true
 
