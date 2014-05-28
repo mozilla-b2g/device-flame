@@ -1,6 +1,6 @@
 include device/qcom/msm8610/BoardConfig.mk
 
-TARGET_NO_BOOTLOADER := true
+TARGET_NO_BOOTLOADER := false
 TARGET_NO_KERNEL := true
 
 TARGET_USES_ION := true
