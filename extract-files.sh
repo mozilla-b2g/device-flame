@@ -189,11 +189,6 @@ COMMON_HW="
 	"
 copy_files "$COMMON_HW" "system/lib/hw" "hw"
 
-COMMON_WIFI_VOLANS="
-	pronto_wlan.ko
-	"
-copy_files "$COMMON_WIFI_VOLANS" "system/lib/modules/pronto" "wifi"
-
 COMMON_WLAN="
 	WCNSS_cfg.dat
 	"
