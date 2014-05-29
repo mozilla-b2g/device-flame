@@ -15,6 +15,9 @@ RECOVERY_EXTERNAL_STORAGE := /storage/sdcard1
 # hack to prevent llvm from building
 BOARD_USE_QCOM_LLVM_CLANG_RS := true
 
+# hack to keep things building
+BOARD_KERNEL_SEPARATED_DT := false
+
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BLUEZ := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
