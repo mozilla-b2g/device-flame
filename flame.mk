@@ -13,7 +13,7 @@ $(call inherit-product-if-exists, vendor/t2m/flame/flame-vendor-blobs.mk)
 PRODUCT_PROPERTY_OVERRIDES += \
   persist.radio.multisim.config=dsds \
   ro.moz.devinputjack=1 \
-  ro.moz.nfc.enabled=true \
+  ro.moz.nfc.enabled=false \
   ro.moz.ril.0.network_types=gsm,wcdma \
   ro.moz.ril.1.network_types=gsm \
   ro.moz.ril.emergency_by_default=true \
