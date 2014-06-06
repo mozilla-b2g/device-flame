@@ -7,6 +7,7 @@ PRODUCT_COPY_FILES := \
     device/t2m/flame/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/t2m/flame/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     device/t2m/flame/fstab.qcom:root/fstab.qcom \
+    device/t2m/flame/init.target.rc:root/init.target.rc \
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic.mk)
 $(call inherit-product-if-exists, vendor/t2m/flame/flame-vendor-blobs.mk)
