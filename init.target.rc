@@ -144,3 +144,16 @@ on property:wlan.driver.ath=0
 # Second SIM
 on init
     symlink /dev/socket/rild1 /dev/socket/rilproxy1
+
+# NFC
+service nfcd /system/bin/nfcd
+    class main
+    oneshot
+    socket nfcd stream 660 nfc nfc
+    user nfc
+    group system
+
+on boot
+    mkdir /data/nfc 0700 nfc nfc
+    chown nfc nfc /dev/pn544
+    setprop ro.nfc.port "I2C"
