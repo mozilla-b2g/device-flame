@@ -140,3 +140,7 @@ service wcnss-service /system/bin/wcnss_service
 
 on property:wlan.driver.ath=0
     start wcnss-service
+
+# Second SIM
+on init
+    symlink /dev/socket/rild1 /dev/socket/rilproxy1
