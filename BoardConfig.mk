@@ -1,7 +1,6 @@
 include device/qcom/msm8610/BoardConfig.mk
 
 TARGET_NO_BOOTLOADER := true
-TARGET_NO_KERNEL := true
 
 TARGET_USES_ION := true
 
@@ -17,9 +16,6 @@ TARGET_PROVIDES_INIT_RC := false
 
 # hack to prevent llvm from building
 BOARD_USE_QCOM_LLVM_CLANG_RS := true
-
-# hack to keep things building
-BOARD_KERNEL_SEPARATED_DT := false
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BLUEZ := true
