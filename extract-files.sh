@@ -153,7 +153,6 @@ COMMON_LIBS="
 	libloc_xtra.so
 	libmmcamera_interface.so
 	libmmjpeg_interface.so
-	libnfc-nci.so
 	libqomx_core.so
 	"
 
