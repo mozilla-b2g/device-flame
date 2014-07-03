@@ -6,6 +6,12 @@ PRODUCT_COPY_FILES := \
     device/qcom/msm8610/media/media_profiles_8610.xml:system/etc/media_profiles.xml \
     device/t2m/flame/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/t2m/flame/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+    system/bluetooth/data/main.conf:system/etc/bluetooth/main.conf \
+    system/bluetooth/data/input.conf:system/etc/bluetooth/input.conf \
+    system/bluetooth/data/blacklist.conf:system/etc/bluetooth/blacklist.conf \
+    system/bluetooth/data/network.conf:system/etc/bluetooth/network.conf \
+    system/bluetooth/data/audio.conf:system/etc/bluetooth/audio.conf \
+    system/bluetooth/data/auto_pairing.conf:system/etc/bluetooth/auto_pairing.conf \
     device/t2m/flame/fstab.qcom:root/fstab.qcom \
     device/t2m/flame/init.target.rc:root/init.target.rc \
 
