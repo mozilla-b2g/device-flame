@@ -43,7 +43,7 @@ PROPRIETARY_DEVICE_DIR=../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 
 mkdir -p $PROPRIETARY_DEVICE_DIR
 
-for NAME in audio hw wifi etc egl etc/firmware nfc
+for NAME in audio hw wifi etc egl etc/firmware nfc bluetooth
 do
     mkdir -p $PROPRIETARY_DEVICE_DIR/$NAME
 done
@@ -197,6 +197,12 @@ COMMON_ETC_WIFI="
 	WCNSS_qcom_cfg.ini
 	"
 copy_files "$COMMON_ETC_WIFI" "system/etc/wifi" "wifi"
+
+COMMON_ETC_BLUETOOTH="
+	main.conf
+	audio.conf
+	"
+copy_files "$COMMON_ETC_BLUETOOTH" "system/etc/bluetooth" "bluetooth"
 
 COMMON_ETC_AUDIO="
 	snd_soc_msm_8x10_wcd_skuaa
