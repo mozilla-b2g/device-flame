@@ -173,6 +173,7 @@ COMMON_BINS="
 	qmuxd
 	radish
 	rmt_storage
+	time_daemon
 	"
 
 copy_files "$COMMON_BINS" "system/bin" ""
@@ -239,6 +240,12 @@ COMMON_FIRMWARE="
 	leia_pm4_470.fw
 	"
 copy_files "$COMMON_FIRMWARE" "system/etc/firmware" "etc/firmware"
+
+B2G_TIME_BUNDLE="
+        chrome.manifest
+        timeservice.js
+        "
+copy_files "$B2G_TIME_BUNDLE" "system/b2g/distribution/bundles/b2g_time" ""
 
 echo $BASE_PROPRIETARY_DEVICE_DIR/libcnefeatureconfig.so:obj/lib/libcnefeatureconfig.so \\ >> $BLOBS_LIST
 
