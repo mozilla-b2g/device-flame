@@ -30,12 +30,18 @@ if [[ ! -d ../../../backup-${DEVICE}/system ]]; then
     adb pull /system ../../../backup-${DEVICE}/system
 fi
 
-if [[ -z "${ANDROIDFS_DIR}" ]]; then
-    echo Pulling files from device
-    DEVICE_BUILD_ID=`adb shell cat /system/build.prop | grep ro.build.display.id | sed -e 's/ro.build.display.id=//' | tr -d '\n\r'`
-else
-    echo Pulling files from ${ANDROIDFS_DIR}
-    DEVICE_BUILD_ID=`cat ${ANDROIDFS_DIR}/system/build.prop | grep ro.build.display.id | sed -e 's/ro.build.display.id=//' | tr -d '\n\r'`
+echo Pulling files from ${ANDROIDFS_DIR}
+DEVICE_BUILD_ID=`cat ${ANDROIDFS_DIR}/system/build.prop | grep ro.build.display.id | sed -e 's/ro.build.display.id=//' | tr -d '\n\r'`
+DEVICE_BUILD_VERSION_SDK=`cat ${ANDROIDFS_DIR}/system/build.prop | grep ro.build.version.sdk | sed -e 's/ro.build.version.sdk=//' | tr -d '\n\r'`
+
+if [[ "$DEVICE_BUILD_VERSION_SDK" -ne 19 ]]; then
+    echo Invalid system backup - Wrong base version found.
+    echo
+    echo Do this:
+    echo 1. Delete backup-${DEVICE}
+    echo 2. Flash your device with KK based images from the vendor
+    echo 3. Try building again
+    exit -1
 fi
 
 BASE_PROPRIETARY_DEVICE_DIR=vendor/$MANUFACTURER/$DEVICE/proprietary
