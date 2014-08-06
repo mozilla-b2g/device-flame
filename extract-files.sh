@@ -143,7 +143,6 @@ copy_local_files()
 }
 
 COMMON_LIBS="
-	libalsa-intf.so
 	libcnefeatureconfig.so
 	libgps.utils.so
 	libloc_api_v02.so
@@ -193,11 +192,6 @@ COMMON_ETC="
 	gps.conf
 	"
 copy_files "$COMMON_ETC" "system/etc" "etc"
-
-COMMON_ETC_AUDIO="
-	snd_soc_msm_8x10_wcd_skuaa
-	"
-copy_files "$COMMON_ETC_AUDIO" "system/etc/snd_soc_msm" "audio"
 
 COMMON_AUDIO="
 	"
