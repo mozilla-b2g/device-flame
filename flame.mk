@@ -4,6 +4,7 @@ PRODUCT_COPY_FILES := \
     device/qcom/msm8610/audio_policy.conf:system/etc/audio_policy.conf \
     device/qcom/msm8610/media/media_codecs_8610.xml:system/etc/media_codecs.xml \
     device/qcom/msm8610/media/media_profiles_8610.xml:system/etc/media_profiles.xml \
+    device/qcom/msm8610/mixer_paths.xml:system/etc/mixer_paths.xml \
     device/qcom/msm8610/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     device/qcom/msm8610/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
     device/qcom/msm8610/WCNSS_qcom_wlan_nv.bin:persist/WCNSS_qcom_wlan_nv.bin \
@@ -34,6 +35,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PACKAGES += \
   nfcd \
+  libaudioroute \
   librecovery
 
 GAIA_DEV_PIXELS_PER_PX := 1.5
