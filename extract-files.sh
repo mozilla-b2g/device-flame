@@ -174,6 +174,7 @@ COMMON_BINS="
 	radish
 	rmt_storage
 	time_daemon
+	trace_util
 	"
 
 copy_files "$COMMON_BINS" "system/bin" ""
