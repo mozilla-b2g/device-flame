@@ -62,6 +62,8 @@ on boot
 on post-fs-data
     mkdir /data/tombstones 0771 system system
     mkdir /tombstones/modem 0771 system system
+    # for load imei/wifi/bt mac
+    mkdir /data/param
 
 # Allow usb charging to be disabled persistently
 on property:persist.usb.chgdisabled=1
@@ -157,3 +159,8 @@ on boot
     mkdir /data/nfc 0700 nfc nfc
     chown nfc nfc /dev/pn544
     setprop ro.nfc.port "I2C"
+
+service trace_util /system/bin/trace_util
+    class late_start
+    user root
+    group root
