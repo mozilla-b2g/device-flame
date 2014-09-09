@@ -174,6 +174,7 @@ COMMON_BINS="
 	qmuxd
 	radish
 	rmt_storage
+	trace_util
 	"
 
 copy_files "$COMMON_BINS" "system/bin" ""
