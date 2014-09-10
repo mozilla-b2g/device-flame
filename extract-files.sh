@@ -197,6 +197,7 @@ copy_files "$COMMON_HW" "system/lib/hw" "hw"
 
 COMMON_ETC="
 	gps.conf
+	mixer_paths.xml
 	"
 copy_files "$COMMON_ETC" "system/etc" "etc"
 
