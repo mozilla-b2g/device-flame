@@ -192,13 +192,15 @@ copy_files "$COMMON_HW" "system/lib/hw" "hw"
 
 COMMON_ETC="
 	gps.conf
+	Bluetooth_cal.acdb
+	General_cal.acdb
+	Global_cal.acdb
+	Handset_cal.acdb
+	Hdmi_cal.acdb
+	Headset_cal.acdb
+	Speaker_cal.acdb
 	"
 copy_files "$COMMON_ETC" "system/etc" "etc"
-
-COMMON_ETC_AUDIO="
-	snd_soc_msm_8x10_wcd_skuaa
-	"
-copy_files "$COMMON_ETC_AUDIO" "system/etc/snd_soc_msm" "audio"
 
 COMMON_AUDIO="
 	"
