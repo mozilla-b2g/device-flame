@@ -49,7 +49,7 @@ PROPRIETARY_DEVICE_DIR=../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 
 mkdir -p $PROPRIETARY_DEVICE_DIR
 
-for NAME in audio hw etc egl etc/firmware nfc
+for NAME in audio etc etc/acdbdata/MTP etc/acdbdata/QRD etc/firmware egl hw nfc
 do
     mkdir -p $PROPRIETARY_DEVICE_DIR/$NAME
 done
@@ -200,6 +200,28 @@ COMMON_ETC="
 	mixer_paths.xml
 	"
 copy_files "$COMMON_ETC" "system/etc" "etc"
+
+COMMON_ETC_ACDBDATA_MTP="
+	MTP_Bluetooth_cal.acdb
+	MTP_General_cal.acdb
+	MTP_Global_cal.acdb
+	MTP_Handset_cal.acdb
+	MTP_Hdmi_cal.acdb
+	MTP_Headset_cal.acdb
+	MTP_Speaker_cal.acdb
+	"
+copy_files "$COMMON_ETC_ACDBDATA_MTP" "system/etc/acdbdata/MTP" "etc/acdbdata/MTP"
+
+COMMON_ETC_ACDBDATA_QRD="
+	QRD_Bluetooth_cal.acdb
+	QRD_General_cal.acdb
+	QRD_Global_cal.acdb
+	QRD_Handset_cal.acdb
+	QRD_Hdmi_cal.acdb
+	QRD_Headset_cal.acdb
+	QRD_Speaker_cal.acdb
+	"
+copy_files "$COMMON_ETC_ACDBDATA_QRD" "system/etc/acdbdata/QRD" "etc/acdbdata/QRD"
 
 COMMON_AUDIO="
 	"
