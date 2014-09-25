@@ -180,6 +180,7 @@ COMMON_BINS="
 	rmt_storage
 	time_daemon
 	trace_util
+	vold
 	"
 
 copy_files "$COMMON_BINS" "system/bin" ""
