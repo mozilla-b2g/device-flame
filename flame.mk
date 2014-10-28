@@ -32,6 +32,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.moz.ril.subscription_control=true \
   org.bluez.device.conn.type=array \
 
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+        persist.sys.usb.config=diag,serial_smd,serial_tty,rmnet_bam,mass_storage
+
 PRODUCT_PACKAGES += \
   nfcd \
   libaudioroute \
