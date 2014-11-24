@@ -168,19 +168,31 @@ copy_files_glob "lib*.so" "system/vendor/lib" ""
 COMMON_BINS="
 	adsprpcd
 	bridgemgrd
+	charger_monitor
 	fm_qsoc_patches
 	fmconfig
 	hci_qcomm_init
+	location-mq
+	lowi-server
 	mm-qcamera-daemon
+	mpdecision
 	netmgrd
 	port-bridge
+	ptt_socket_app
+	qcom-system-daemon
 	qmiproxy
 	qmuxd
+	qrngd
+	qseecomd
 	radish
+	rfs_access
 	rmt_storage
+	thermal-engine
 	time_daemon
 	trace_util
 	vold
+	xtwifi-client
+	xtwifi-inet-agent
 	"
 
 copy_files "$COMMON_BINS" "system/bin" ""
@@ -198,7 +210,9 @@ copy_files "$COMMON_HW" "system/lib/hw" "hw"
 
 COMMON_ETC="
 	gps.conf
+	lowi.conf
 	mixer_paths.xml
+	xtwifi.conf
 	"
 copy_files "$COMMON_ETC" "system/etc" "etc"
 
@@ -247,6 +261,12 @@ COMMON_VENDOR_EGL="
 	libq3dtools_adreno.so
 	"
 copy_files "$COMMON_VENDOR_EGL" "system/vendor/lib/egl" "egl"
+
+COMMON_VENDOR_HW="
+	flp.default.so
+        "
+copy_files "$COMMON_VENDOR_HW" "system/vendor/lib/hw" "hw"
+
 
 COMMON_FIRMWARE="
 	a225_pfp.fw
