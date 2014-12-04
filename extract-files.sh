@@ -21,13 +21,13 @@ if [[ -z "${ANDROIDFS_DIR}" ]]; then
     ANDROIDFS_DIR=../../../backup-${DEVICE}
 fi
 
-if [[ ! -d ../../../backup-${DEVICE}/system ]]; then
+if [[ ! -d ${ANDROIDFS_DIR}/system ]]; then
     echo Backing up system partition to backup-${DEVICE}
-    mkdir -p ../../../backup-${DEVICE} &&
+    mkdir -p ${ANDROIDFS_DIR} &&
     adb root &&
     sleep 1 &&
     adb wait-for-device &&
-    adb pull /system ../../../backup-${DEVICE}/system
+    adb pull /system ${ANDROIDFS_DIR}/system
 fi
 
 if [[ -z "${ANDROIDFS_DIR}" ]]; then
