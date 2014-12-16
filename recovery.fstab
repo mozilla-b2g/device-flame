@@ -40,6 +40,8 @@
 /dev/block/platform/msm_sdcc.1/by-name/tz           /tz             emmc    defaults                                                        defaults
 /dev/block/platform/msm_sdcc.1/by-name/rpm          /rpm            emmc    defaults                                                        defaults
 /dev/block/platform/msm_sdcc.1/by-name/sbl1         /sbl1           emmc    defaults                                                        defaults
+#add sdi mount point for sdi image update
+/dev/block/platform/msm_sdcc.1/by-name/sdi          /sdi            emmc    defaults                                                        defaults
 # Add by ling.yi@jrdcom.com for fota mount point with BUG540588 ,20131018 end
 # [FEATURE]-ADD by ling.yi@jrdcom.com, 2013/11/08, Bug 550459, FOTA porting begin
 /dev/block/platform/msm_sdcc.1/by-name/abootbk      /abootbk          emmc    defaults                                                        defaults
