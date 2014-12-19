@@ -167,3 +167,6 @@ service trace_util /system/bin/trace_util
     class late_start
     user root
     group root
+
+on boot
+   setprop persist.radio.apm_sim_not_pwdn 0
