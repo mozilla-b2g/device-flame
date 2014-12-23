@@ -39,7 +39,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
   nfcd \
   libaudioroute \
-  librecovery
+  librecovery \
+  updater
 
 GAIA_DEV_PIXELS_PER_PX := 1.5
 
