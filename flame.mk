@@ -37,9 +37,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
         persist.sys.usb.config=diag,serial_smd,serial_tty,rmnet_bam,mass_storage
 
 PRODUCT_PACKAGES += \
-  nfcd \
+  bluetoothd \
   libaudioroute \
-  librecovery
+  librecovery \
+  nfcd
 
 GAIA_DEV_PIXELS_PER_PX := 1.5
 
