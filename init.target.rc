@@ -147,6 +147,8 @@ service wcnss-service /system/bin/wcnss_service
 on property:wlan.driver.ath=0
     start wcnss-service
 
+import /init.bluetooth.rc
+
 # Second SIM
 on init
     symlink /dev/socket/rild1 /dev/socket/rilproxy1
