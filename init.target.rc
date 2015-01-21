@@ -153,12 +153,13 @@ on init
     symlink /dev/socket/rild1 /dev/socket/rilproxy1
 
 # NFC
+
 service nfcd /system/bin/nfcd
     class main
-    oneshot
-    socket nfcd stream 660 nfc nfc
     user nfc
     group system
+    disabled
+    oneshot
 
 on boot
     mkdir /data/nfc 0700 nfc nfc
