@@ -18,8 +18,9 @@ PRODUCT_COPY_FILES := \
     device/t2m/flame/fstab.qcom:root/fstab.qcom \
     device/t2m/flame/init.target.rc:root/init.target.rc \
 
+TARGET_DEVICE_BLOBS := vendor/t2m/flame/flame-vendor-blobs.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic.mk)
-$(call inherit-product-if-exists, vendor/t2m/flame/flame-vendor-blobs.mk)
+$(call inherit-product-if-exists, $(TARGET_DEVICE_BLOBS))
 
 PRODUCT_PROPERTY_OVERRIDES += \
   persist.radio.multisim.config=dsds \

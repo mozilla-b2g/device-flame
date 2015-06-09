@@ -1,0 +1,15 @@
+[
+  {
+    "id": "Flame",
+    "adb": {
+      "ro.product.device": [ "flame" ],
+      "ro.bootloader": "L1TC000118D0",
+      "ro.build.id": "KOT49H"
+    },
+    "fastboot": {
+      "product": [ "MSM8610" ],
+      "version": [ "0.5" ]
+    }
+  }
+]
+
