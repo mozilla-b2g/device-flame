@@ -1,0 +1,27 @@
+# audit2allow
+allow b2g mpctl_data_file:file { write open };
+allow b2g mpctl_socket:dir search;
+allow b2g mpctl_socket:sock_file write;
+allow b2g mpdecision:unix_stream_socket connectto;
+allow b2g persist_file:dir { read open search };
+allow b2g sysfs_battery_supply:dir search;
+allow b2g sysfs_battery_supply:file { read open };
+allow b2g sysfs_graphics:file { write open };
+allow b2g time_data_file:file { write open };
+
+# vendor domain specific allows based on audit2allow
+#============= rmt_storage ==============
+allow rmt_storage block_device:blk_file { read write open }; # forbidden by neverallow
+allow rmt_storage ssd_device:blk_file { read write open };
+
+#============= thermal-engine ==============
+allow thermal-engine sysfs_battery_supply:dir search;
+allow thermal-engine sysfs_battery_supply:file { read open };
+
+#============= wcnss_service ==============
+allow wcnss_service persist_file:file setattr;
+allow wcnss_service self:capability chown;
+
+#============= mm-qcamerad ==============
+allow mm-qcamerad b2g:fd use;
+
