@@ -1,0 +1,37 @@
+# fm_radio app needes  open read write on fm_radio_device
+allow system_app fm_radio_device:chr_file { read open ioctl};
+allow system_app ctl_default_prop:property_service set;
+allow system_app atfwd_service:service_manager add;
+allow system_app dun_service:service_manager add;
+
+# access to perflock
+allow system_app mpctl_socket:dir r_dir_perms;
+unix_socket_send(system_app, mpctl, mpdecision)
+unix_socket_connect(system_app, mpctl, mpdecision)
+allow system_app dpmservice:service_manager add;
+unix_socket_send(system_app, mpctl, perfd)
+unix_socket_connect(system_app, mpctl, perfd)
+
+# access to mm-pp-daemon
+unix_socket_connect(system_app, pps, mm-pp-daemon)
+allow system_app cne_service:service_manager add;
+
+userdebug_or_eng(`
+  allow system_app debugfs:file r_file_perms;
+  allow system_app su:unix_dgram_socket sendto;
+  allow system_app persist_file:dir r_dir_perms;
+  allow system_app sensors_persist_file:dir r_dir_perms;
+  allow system_app sensors_persist_file:file rw_file_perms;
+')
+allow system_app cnd_data_file:dir w_dir_perms;
+allow system_app cnd_data_file:file create_file_perms;
+allow system_app bluetooth:unix_stream_socket ioctl;
+
+# access to tee domain
+allow system_app tee:unix_dgram_socket sendto;
+
+# access to time_daemon
+allow system_app time_daemon:unix_stream_socket connectto;
+
+# access to color service SDK
+allow system_app color_service:service_manager add;

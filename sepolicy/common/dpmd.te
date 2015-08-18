@@ -1,0 +1,41 @@
+#dpmd as domain
+type dpmd, domain;
+type dpmd_exec, exec_type, file_type;
+file_type_auto_trans(dpmd, socket_device, dpmwrapper_socket);
+init_daemon_domain(dpmd)
+net_domain(dpmd)
+allow dpmd dpmd_exec:file execute_no_trans;
+
+#allow dpmd to access dpm_data_file
+allow dpmd dpmd_data_file:file create_file_perms;
+allow dpmd dpmd_data_file:dir create_dir_perms;
+
+#allow dpmd to access qmux radio socket
+qmux_socket(dpmd);
+
+#self capability
+allow dpmd sysfs_wake_lock:file rw_file_perms;
+allow dpmd self:socket rw_socket_perms;
+allow dpmd self:netlink_socket rw_socket_perms;
+allow dpmd self:capability { setuid setgid dac_override net_raw chown fsetid net_admin sys_module };
+
+#socket, self
+allow dpmd smem_log_device:chr_file rw_file_perms;
+unix_socket_connect(dpmd, property, init)
+allow dpmd self:capability2 block_suspend;
+allow dpmd system_prop:property_service set;
+allow dpmd ctl_default_prop:property_service set;
+
+#misc.
+allow dpmd shell_exec:file { read execute open execute_no_trans };
+allow dpmd system_file:file execute_no_trans;
+
+#kernel
+allow dpmd kernel:system module_request;
+
+#appdomain
+allow dpmd appdomain:fd use;
+allow dpmd appdomain:tcp_socket { read write getopt getattr };
+
+#permission to unlink dpmwrapper socket
+allow dpmd socket_device:dir remove_name;

@@ -1,0 +1,52 @@
+#============= system_server ==============
+# allow system_server to communicate with cnd process over cnd_socket
+unix_socket_connect(system_server, cnd, cnd)
+# allow  system/framework applications to update the cnd configuration files
+allow system_server cnd_data_file:dir { read open write getattr add_name };
+allow system_server cnd_data_file:file { create write getattr setattr read lock open };
+
+# Access to sensors socket
+unix_socket_connect(system_server, sensors, sensors)
+unix_socket_send(system_server, sensors, sensors)
+allow system_server sensors:unix_stream_socket sendto;
+allow system_server sensors_socket:sock_file r_file_perms;
+qmux_socket(system_server);
+
+# access to perflock
+allow system_server mpctl_socket:dir r_dir_perms;
+unix_socket_send(system_server, mpctl, mpdecision)
+unix_socket_connect(system_server, mpctl, mpdecision)
+
+# allow  system/framework applications to update the dpmd configuration files
+unix_socket_connect(system_server, dpmd, dpmd);
+allow system_server dpmd_socket:sock_file write;
+allow system_server dpmd_data_file:dir create_dir_perms;
+allow system_server dpmservice:service_manager add;
+allow system_server dpmd_data_file:file create_file_perms;
+allow system_server socket_device:sock_file write;
+
+unix_socket_send(system_server, mpctl, perfd)
+unix_socket_connect(system_server, mpctl, perfd)
+
+allow system_server location:unix_stream_socket connectto;
+allow system_server location_data_file:dir rw_dir_perms;
+allow system_server location_data_file:fifo_file create_file_perms;
+allow system_server location_socket:sock_file rw_file_perms;
+allow system_server location_app_data_file:dir r_dir_perms;
+allow system_server location_data_file:sock_file rw_file_perms;
+
+#For wifistatemachine
+allow system_server kernel:key search;
+allow system_server wbc_service:service_manager add;
+allow system_server digitalpen_service:service_manager add;
+
+#For ssr
+allow system_server ssr_device:chr_file { read open };
+
+allow system_server fuse:dir search;
+allow system_server persist_file:dir search;
+
+#For ANT tty communication and to set wc_transport prop
+allow system_server bluetooth_prop:property_service set;
+allow system_server serial_device:chr_file rw_file_perms;
+allow system_server smd_device:chr_file rw_file_perms;
