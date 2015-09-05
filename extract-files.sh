@@ -288,4 +288,5 @@ B2G_TIME_BUNDLE="
 copy_files "$B2G_TIME_BUNDLE" "system/b2g/distribution/bundles/b2g_time" ""
 
 echo $BASE_PROPRIETARY_DEVICE_DIR/libcnefeatureconfig.so:obj/lib/libcnefeatureconfig.so \\ >> $BLOBS_LIST
+echo $BASE_PROPRIETARY_DEVICE_DIR/libtime_genoff.so:obj/lib/libtime_genoff.so \\ >> $BLOBS_LIST
 
