@@ -161,6 +161,13 @@ service nfcd /system/bin/nfcd
     disabled
     oneshot
 
+service sensorsd /system/bin/sensorsd
+    class main
+    user system
+    group system input
+    disabled
+    oneshot
+
 on boot
     mkdir /data/nfc 0700 nfc nfc
     chown nfc nfc /dev/pn544
