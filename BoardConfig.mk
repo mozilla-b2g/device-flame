@@ -27,8 +27,10 @@ BOARD_USE_QCOM_LLVM_CLANG_RS := true
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/t2m/flame/bluetooth \
-                                               $(GECKO_PATH)/dom/bluetooth/bluedroid
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := \
+  device/t2m/flame/bluetooth \
+  hardware/libhardware_moz/include/hardware_moz/bluetooth/bluedroid
+
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HAS_ATH_WLAN_AR6004 := true
 BOARD_WLAN_DEVICE := qcwcn
