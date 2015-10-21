@@ -5,9 +5,6 @@ TARGET_NO_BOOTLOADER := true
 
 TARGET_RECOVERY_UI_LIB :=
 
-# Use default Gecko location if it's not provided in config files.
-GECKO_PATH ?= gecko
-
 TARGET_USES_TCT_FOTA := false
 #TARGET_RECOVERY_FSTAB := device/t2m/flame/recovery.fstab
 #TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
@@ -33,8 +30,9 @@ ENABLE_LIBRECOVERY := true
 BOARD_USE_QCOM_LLVM_CLANG_RS := true
 
 BOARD_HAVE_BLUETOOTH := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/t2m/flame/bluetooth \
-                                               $(GECKO_PATH)/dom/bluetooth/bluedroid
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := \
+  device/t2m/flame/bluetooth \
+  hardware/libhardware_moz/include/hardware_moz/bluetooth/bluedroid
 BOARD_HAVE_BLUETOOTH_QCOM := true
 QCOM_BT_USE_SMD_TTY := true
 BLUETOOTH_HCI_USE_MCT := true
