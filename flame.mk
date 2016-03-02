@@ -1,5 +1,9 @@
 $(call inherit-product, device/qcom/msm8610/msm8610.mk)
 
+TARGET_GCC_VERSION_EXP := 4.8
+TARGET_GLOBAL_CPPFLAGS += -Wno-unused-parameter -Wno-sizeof-pointer-memaccess
+COMMON_GLOBAL_CFLAGS += -Wno-unused-parameter
+
 PRODUCT_COPY_FILES := \
     device/qcom/msm8610/audio_policy.conf:system/etc/audio_policy.conf \
     device/qcom/msm8610/media/media_codecs_8610.xml:system/etc/media_codecs.xml \
