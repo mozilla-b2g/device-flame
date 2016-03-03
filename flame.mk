@@ -1,8 +1,7 @@
 $(call inherit-product, device/qcom/msm8610/msm8610.mk)
 
-TARGET_GCC_VERSION_EXP := 4.8
-TARGET_GLOBAL_CPPFLAGS += -Wno-unused-parameter -Wno-sizeof-pointer-memaccess
-COMMON_GLOBAL_CFLAGS += -Wno-unused-parameter
+# Build Gecko with gcc-4.9
+GECKO_TOOLS_PREFIX = prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
 
 PRODUCT_COPY_FILES := \
     device/qcom/msm8610/audio_policy.conf:system/etc/audio_policy.conf \
