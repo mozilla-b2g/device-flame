@@ -55,3 +55,6 @@ PRODUCT_DEVICE := flame
 PRODUCT_BRAND := qcom
 PRODUCT_MANUFACTURER := t2m
 PRODUCT_MODEL := flame
+
+# Set Gecko toolchain
+GECKO_TOOLS_PREFIX = prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
