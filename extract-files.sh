@@ -281,11 +281,5 @@ COMMON_FIRMWARE="
 	"
 copy_files "$COMMON_FIRMWARE" "system/etc/firmware" "etc/firmware"
 
-B2G_TIME_BUNDLE="
-        chrome.manifest
-        timeservice.js
-        "
-copy_files "$B2G_TIME_BUNDLE" "system/b2g/distribution/bundles/b2g_time" ""
-
 echo $BASE_PROPRIETARY_DEVICE_DIR/libcnefeatureconfig.so:obj/lib/libcnefeatureconfig.so \\ >> $BLOBS_LIST
 
