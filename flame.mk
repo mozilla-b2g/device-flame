@@ -1,5 +1,8 @@
 $(call inherit-product, device/qcom/msm8610/msm8610.mk)
 
+# Build Gecko with gcc-4.9
+GECKO_TOOLS_PREFIX = prebuilts/gcc/$(HOST_PREBUILT_TAG)/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
+
 PRODUCT_COPY_FILES := \
     device/qcom/msm8610/audio_policy.conf:system/etc/audio_policy.conf \
     device/qcom/msm8610/media/media_codecs_8610.xml:system/etc/media_codecs.xml \
