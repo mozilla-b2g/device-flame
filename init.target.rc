@@ -38,6 +38,12 @@ on early-init
 on init
     mkdir /storage 0150 system sdcard_r
     mkdir /storage/sdcard0 0000 system system
+
+    # /sdcard points to /storage/sdcard by default, but we want
+    # it to point to /storage/sdcard0
+    rm /sdcard
+    symlink /storage/sdcard0 /sdcard
+
     export EXTERNAL_STORAGE /storage/sdcard0
     export SECONDARY_STORAGE /storage/sdcard1
     export BOOTCLASSPATH ${BOOTCLASSPATH}:/system/framework/oem-services.jar:/system/framework/qcmediaplayer.jar
