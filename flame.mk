@@ -46,6 +46,10 @@ PRODUCT_PACKAGES += \
 
 GAIA_DEV_PIXELS_PER_PX := 1.5
 
+# for Gecko to support bluedroid stack
+PRODUCT_PACKAGES += \
+    bluetooth.default
+
 PRODUCT_NAME := flame
 PRODUCT_DEVICE := flame
 PRODUCT_BRAND := qcom
