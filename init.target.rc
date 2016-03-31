@@ -151,6 +151,13 @@ on property:wlan.driver.ath=0
 on init
     symlink /dev/socket/rild1 /dev/socket/rilproxy1
 
+service geolocationd /system/bin/geolocationd
+    class main
+    user system
+    group system gps
+    disabled
+    oneshot
+
 # NFC
 service nfcd /system/bin/nfcd
     class main
